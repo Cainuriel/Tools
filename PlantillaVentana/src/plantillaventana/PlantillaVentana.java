@@ -13,40 +13,34 @@ import javax.swing.*;
  * @author cainu
  */
 public class PlantillaVentana extends JFrame {
-    
-     public PlantillaVentana() {
-        
-        setTitle("Ventana");
-        
-        setBounds(400,450,400,450);
-        
-        add(new Lamina());
-        
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
 
-        
-      
+    public PlantillaVentana() {
+
+        setTitle("Ventana");
+
+        setBounds(400, 450, 400, 450);
+
+        add(new Lamina());
+
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
     }
-     
-      public class Lamina extends JPanel {
-        
+
+    public class Lamina extends JPanel {
+
         public Lamina() {
-            
-            
-            
+
         }
     }
-    
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
-           PlantillaVentana ventana = new PlantillaVentana();
-      ventana.setVisible(true);
+
+        PlantillaVentana ventana = new PlantillaVentana();
+        ventana.setVisible(true);
     }
-    
+
 }
