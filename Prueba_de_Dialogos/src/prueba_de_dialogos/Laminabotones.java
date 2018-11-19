@@ -30,7 +30,7 @@ public class Laminabotones extends JPanel {
         // construccion de los RadioButtons.
         for (int i=0; i<opciones.length; i++) {
             JRadioButton boton = new JRadioButton(opciones[i]);
-            boton.setActionCommand(null);
+            boton.setActionCommand(opciones[i]);
             add(boton);
             grupo.add(boton);
             

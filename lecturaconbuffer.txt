@@ -1,0 +1,8 @@
+El buffer lee linea por linea, asi que crearemos varias lineas para comprobarlo.
+Linea primera.
+Linea segunda.
+Linea tercera.
+Linea cuarta.
+Linea quinta, esta la alargaremos un poco para comprobar como funciona.
+Linea sexta.
+Y finalmente, linea septima.
