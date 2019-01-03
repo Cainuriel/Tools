@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--hemos introducido el archivo xslt -->
+<?xml-stilesheet href= "ejemplo.xsl"?>
+
+
+<Edit_Mensaje>
+     <Mensaje>
+          <Remitente>
+               <Nombre>Fernando Lopez</Nombre>
+               <Mail> cainuriel@gmail.com </Mail>
+          </Remitente>
+          <Destinatario>
+               <Nombre>Manuel Contreras</Nombre>
+               <Mail>manuelcontreras@gmail.com</Mail>
+          </Destinatario>
+          <Texto>
+               <Asunto>
+                    Asunto: Pruebas con XSL
+               </Asunto>
+               <Parrafo>
+                  Soy Fernando Lopez, y estoy aprendiendo a manejar
+                  archivos XSL sobre un XML.
+                  Este texto es una carta remetida por mi a Manuel 
+                   Contreras.
+                  Atentamente:
+                  Fernando.
+               </Parrafo>
+          </Texto>
+     </Mensaje>
+</Edit_Mensaje>

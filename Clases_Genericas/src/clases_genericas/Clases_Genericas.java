@@ -7,14 +7,12 @@ package clases_genericas;
 
 /**
  *
- * @author cainu
+ * @author cainuriel
  */
 public class Clases_Genericas {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
+        
         ClaseGenerica<String> primerobjeto = new ClaseGenerica<String>();
 
         primerobjeto.setcampodeclase("Hemos convertido en String "
@@ -37,7 +35,7 @@ public class Clases_Genericas {
         // Probamos el metodo generico. Que es estatico para no tener que
         //instanciar un objeto para su uso.
         String[] sagradafamilia = {"Jose", "Maria", "Jesus"};
-        Integer[] diez = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+        Integer[] diez = {60, 23, 29, 42, 35, 36, 27, 38, 29, 30};
         // da igual el tipo del objeto, ya que el metodo es generico.
         // aun asi, no acepta tipos primitivos. puedes ver metoso genericos
         //que incluyen el tipo entre <>, pero no es necesario. 
@@ -47,6 +45,46 @@ public class Clases_Genericas {
         // probamos el otro metodo generico.
         System.out.println(longitudArray.datoMenor(sagradafamilia));
         System.out.println(longitudArray.datoMenor(diez));
+        
+        System.out.println("PROBANDO LA HERENCIA EN CLASES GENERICAS");
+        System.out.println("''''''''''''''''''''''''''''''''''''''''''''''''''");
+        
+        System.out.println("La herencia con otros tipos de objetos es de la "
+                + "siguiente manera:\n"
+                + "si un objeto, es otro tipo de objeto, entonces dispone de "
+                + "esa herencia \n"
+                + "Ejemplo: podemos guardar un String en un objeto de la clase "
+                + "cosmica Object");
+        
+        String string = "soy un objeto de clase Object";
+        Object  ejemplo;
+        ejemplo = string;
+        System.out.println(ejemplo);
+        
+        System.out.println("Como lo realizamos con las clases genericas?");
+        
+        ClaseGenerica <Objeto> pizarra = new ClaseGenerica <Objeto>();
+        
+        System.out.println("Esta pizarra como clase Generica Objeto"
+                + "que \n"
+                + "hemos creado en este Script, no puede recibir directamente un"
+                + " objeto \n"
+                + "de la clase Objeto, como el creado anteriormente. No podemos "
+                + "hacer: \n"
+                + "pizarra = objeto;");
+        
+                System.out.println("La forma adecuada seria crear un metodo con"
+                        + " un tipo comodin. \n"
+                        + "public static void tipoComodin(ClaseGenerica <? extends"
+                        + " Objeto> o) {}");
+// hemos creado una clase que hereda de objeto para probar la herencia en
+// clases genericas.
+                ClaseGenerica <Objetocomplejo> objetocomplejo = 
+                        new ClaseGenerica<Objetocomplejo>();
+                ClaseGenerica.tipoComodin(pizarra);
+                ClaseGenerica.tipoComodin(objetocomplejo);
+                
+       
 
     }
 
@@ -63,7 +101,15 @@ public class Clases_Genericas {
 class ClaseGenerica<T> {
 
     private T campodeclase;
-
+    
+       /**
+     * metodo creado para probar el uso del comodin.
+     * @param o objeto de la clase Objeto que puede recibir subclases.
+     */
+    public static void tipoComodin(ClaseGenerica <? extends Objeto> o) {
+        System.out.println(o);
+    }
+   
     public ClaseGenerica() {
 
         campodeclase = null;
@@ -83,6 +129,9 @@ class ClaseGenerica<T> {
 class Objeto {
 
     private String nombre;
+    
+  
+
 
     public Objeto(String nombre) {
 
@@ -97,6 +146,30 @@ class Objeto {
     }
 
 }
+/**
+ * Clase que hereda de objeto para probar la herencia en Clases genericas.
+ * @author cainuriel
+ */
+class Objetocomplejo extends Objeto {
+
+    private String complejidad;
+
+    public Objetocomplejo(String nombre,String complejidad) {
+        
+        super(nombre);
+        this.complejidad = complejidad;
+
+    }
+
+    @Override
+    public String toString() {
+
+        return complejidad;
+    }
+
+}
+
+
 
 /**
  *
@@ -135,7 +208,7 @@ class longitudArray {
             // usamos la interface para comparar objetos. devuelve un entero mayor de cero
 // si es el objeto mayor al comparado.  
             if (eselmenor.compareTo(array[i]) > 0) {
-
+                eselmenor = array[i];
             }
 
         }
